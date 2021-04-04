@@ -1,4 +1,4 @@
-package study01_1;
+package Baekjoon_problem;
 
 public class baekjoon_2557 {
 
