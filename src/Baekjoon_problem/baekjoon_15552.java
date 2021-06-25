@@ -13,6 +13,17 @@ import java.util.StringTokenizer;
  * Java를 사용하고 있다면, Scanner와 System.out.println 대신 BufferedReader와 BufferedWriter를 사용할 수 있다. 
  * BufferedWriter.flush는 맨 마지막에 한 번만 하면 된다.
  */
+
+/*
+ BufferedReader 와 BufferedWriter
+
+버퍼를 이용하여 입력받은 값들을 한 번에 전송하기 때문에 입출력시 효율이 좋다.
+예) 흙을 삽으로 한 번씩 풀 때마다 옮기기 10번 vs 수레에 10번 삽으로 흙을 퍼 담아 한 번에 옮기기
+
+버퍼(buffer)
+어떤 장치에서 다른 장치로 데이터를 송신할 때 일어나는 시간의 차이나 데이터 흐름의 속도 차이를 조정하기 위해 일시적으로 데이터를 기억시키는 장치.
+
+ */
 public class baekjoon_15552 {
 
 	public static void main(String[] args){
