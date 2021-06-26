@@ -22,7 +22,17 @@ import java.util.StringTokenizer;
 
 버퍼(buffer)
 어떤 장치에서 다른 장치로 데이터를 송신할 때 일어나는 시간의 차이나 데이터 흐름의 속도 차이를 조정하기 위해 일시적으로 데이터를 기억시키는 장치.
+버퍼링(buffering)
+어떤 장치에서 다른 장치로 데이터를 송신할 때 양자의 속도 차이를 조정하기 위해 일시적으로 데이터를 기억시키는 수법
 
+1. BufferedReader
+
+보통 자바에서 입력을 받기 위해 java.util 패키지의 Scanner 클래스을 사용한다. Scanner같은 경우 공백 문자와 엔터로 입력값을 구분한다. 
+예) Scanner.next() / Scanner.nextLine()
+이와 다르게 BuferedReader는 엔터만 경계로 인식한다. 따라서 공백 문자로 입력값을 구분하기 위해서는 따로 처리가 필요하다. (여기서는 StringTokenizer를 사용할 예정이다.)
+
+Reads text from a character-input stream, buffering characters so as to * provide for the efficient reading of characters, arrays, and lines. * *
+: 문자들, 배열, 줄의 효율적인 읽기를 제공하기 위해서 문자들을 버퍼링하면서 문자 입력 스트림으로부터 글자를 읽는다.
  */
 public class baekjoon_15552 {
 
