@@ -33,6 +33,19 @@ import java.util.StringTokenizer;
 
 Reads text from a character-input stream, buffering characters so as to * provide for the efficient reading of characters, arrays, and lines. * *
 : 문자들, 배열, 줄의 효율적인 읽기를 제공하기 위해서 문자들을 버퍼링하면서 문자 입력 스트림으로부터 글자를 읽는다.
+<p> The buffer size may be specified, or the default size may be used. The * default is large enough for most purposes. * *
+: 버퍼 크기는 정할 수도, 기본 크기를 사용할 수도 있다. 기본 크기는 충분히 크다
+<p> In general, each read request made of a Reader causes a corresponding * read request to be made of the underlying character or byte stream.
+:일반적으로, Reader의 각 읽기 요청은 평균 이하의 문자, byte 스트림으로 구성된 해당 읽기요청을 야기시킨다. 
+It is * therefore advisable to wrap a BufferedReader around any Reader whose read() * operations may be costly, such as FileReaders and InputStreamReaders.
+:따라서 BufferedReader로 FileReader와 InputStreamReader같이 read()작업에 비용이 많이 들 수 있는 다른 Reader를 감싸는 것이 좋다. 
+
+BufferedReader의 사용법
+import java.io.BufferedReader; //BufferedReader는 java.io패키지
+
+class Test{
+	public static void main(String[] args){
+    	BufferedReader bfr=new BufferedReader(new InputStreamReader(System.in));
  */
 public class baekjoon_15552 {
 
