@@ -43,9 +43,44 @@ It is * therefore advisable to wrap a BufferedReader around any Reader whose rea
 BufferedReader의 사용법
 import java.io.BufferedReader; //BufferedReader는 java.io패키지
 
+import java.io.BufferedReader; //BufferedReader는 java.io패키지
+
 class Test{
-	public static void main(String[] args){
+	public static void main(String[] args) throws IOException{
+    	//BufferedReader 사용 시 예외처리 필수.
+        // try-catch 구문 사용 가능
     	BufferedReader bfr=new BufferedReader(new InputStreamReader(System.in));
+        
+        int intNum=Integer.parseInt(bfr.readLine());
+        //BufferedReader.readLine()은 문자열을 반환해주기 때문에 
+        //int값을 받기 위해서는 형변환이 필요하다.
+        
+        //띄어쓰기를 기준으로 입력값 받기
+        StringTokenizer stz=new StringTokenizer(bfr.readLine());//띄어쓰기를 기준으로 토큰화
+        String str1 = stz.nextToken();
+        String str2= stz.nextToken();
+       	예) 
+        입력: this is a test
+        str1 -> this 
+        str2 -> is
+        
+        bfr.close() //버퍼 이용시 사용이 끝난 후 반드시 스트림을 닫아주어야 한다.
+        }
+}
+
+메서드 종류
+BufferedReader(Reader in[, int size])	Creates a buffering character-input stream that uses an input buffer of* the specified size.:size 크기의 입력 버퍼를 사용하는 문자 입력 버퍼스트림을 생성한다.
+										- size 파라미터 생략 시 defualt 크기의 문자 입력 버퍼스트림 생성
+int read([char cbuf[][, int off, int len]])	문자 배열 cbuf을 off 위치에서 부터 len 개의 문자를  한 문자씩 읽어 숫자로 반환한다. 즉, 해당 문자의 아스키 코드 값 반환한다. 만약 스트림의 끝에 도달하면 -1을 반환한다.
+											-read() :Reads a single character. 한 개의 문자를 읽는다.
+											-read(char cbuf[])
+String readLine()	Reads a line of text.:'\n'을 기준으로, 한 줄의 글을 읽고 문자열을 반환한다.
+long skip(long n)	Skips characters.:n 개수만큼 문자를 건너뛰고 건너뛴 문자의 개수를 반환한다.
+boolean ready()	Tells whether this stream is ready to be read.:해당 스트림이 사용할 준비가 되었는지 아닌지 알려준다.
+boolean markSupported()	Tells whether this stream supports the mark() operation, which it does.:해당 스트림이 mark() 기능을 지원하는지 아닌지 알려준다.
+void mark(int readAheadLimit)	Marks the present position in the stream.:스트림에서 현재 위치를 마킹한다.
+void reset()	 Resets the stream to the most recent mark.:가장 최근 마킹으로 스트림을 재설정한다.
+void close()	스트림을 닫아준다.
  */
 public class baekjoon_15552 {
 
